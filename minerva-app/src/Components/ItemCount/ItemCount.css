@@ -1,0 +1,18 @@
+.itemCountContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 10%;
+}
+
+.btnAddOn {
+font-size: 14px;
+width: 100%;
+}
+
+.btnQuantity {
+font-size: 14px;
+width: 100%;
+}
