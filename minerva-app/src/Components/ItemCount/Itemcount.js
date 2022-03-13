@@ -1,25 +1,31 @@
-import React,{useState} from 'react';
+import {useState} from 'react';
 import './ItemCount.css';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
-export default function Itemcount() {
-const [count, setCount] = useState(0); 
-const stock = useState(11);
+export default 
+
+function Itemcount ( {stock, initial, onAdd} ) {
+const [count, setCount] = useState(initial); 
+// const stock = useState(11);
 
 const handlerCountPlus = () => {
-  if (count < stock[0]) {
+  if (count < stock) {
     setCount(count+1);
   }
   else {
-    alert(`Lo sentimos solo nos quedan ${stock[0]}`)
+    alert(`Lo sentimos solo nos quedan ${stock}`)
   }  
 };
 
 const handlerCountMinus = () => {
-  if(count > 0) {
+  if(count > initial) {
     setCount(count-1);
   }
 };
+
+const addtoBag = () => {
+  console.log(count)
+}
 
 
   return (
@@ -29,7 +35,7 @@ const handlerCountMinus = () => {
         <Button variant="secondary" disabled>{count}</Button>
         <Button variant="secondary" onClick={() => handlerCountPlus()}>+1</Button>
     </ButtonGroup>
-    <Button variant="outline-light" className='btnAddOn'>Agregar a la compra</Button>
+    <Button variant="outline-light" className='btnAddOn'onClick={() => addtoBag()}>Agregar a la compra</Button>
   </div>
     
     

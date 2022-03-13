@@ -5,10 +5,9 @@ import './ItemListContainer.css'
 
 function ItemListContainer({greeting}) {
   return (
-    <div className='itemListContainer'>{greeting}
-    <Itemcount/>
-    
-    
+    <div className='itemListContainer'>
+      <div className='greeting'>{greeting}</div>
+      <div className='itemCountContainer'><Itemcount stock={5} initial={1} /></div>
     </div>
   )
 }
