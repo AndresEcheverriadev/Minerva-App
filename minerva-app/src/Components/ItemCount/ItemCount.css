@@ -3,16 +3,50 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-wrap:nowrap;
     gap: 5px;
-    width: 10%;
+    width: 30%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    align-content: center;
 }
 
-.btnAddOn {
-font-size: 14px;
-width: 100%;
+.itemCountTitle {
+    font-size: 14px;
+    color: #cccccc;
 }
 
-.btnQuantity {
-font-size: 14px;
-width: 100%;
+.itemCountImgContainer {
+    border-style:solid;
+    border-width: 2px;
+    border-color: #cccccc;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    padding: 1px;
+    background-color: #cccccc;
 }
+
+.imageProduct {
+    width: 100%;
+    height: auto;
+}
+
+.itemCountBtnQuantityContainer {
+   width: 100%;
+}
+
+.itemCountBtnQuantity {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.itemCountBtnAddOn {
+    font-size: 14px;
+    width: 100% !important;
+    align-items: center;
+    text-align: center;
+    color: #cccccc;
+}
+
