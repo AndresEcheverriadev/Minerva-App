@@ -12,27 +12,6 @@
     align-content: center;
 }
 
-.itemCountTitle {
-    font-size: 14px;
-    color: #cccccc;
-}
-
-.itemCountImgContainer {
-    border-style:solid;
-    border-width: 2px;
-    border-color: #cccccc;
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    padding: 1px;
-    background-color: #cccccc;
-}
-
-.imageProduct {
-    width: 100%;
-    height: auto;
-}
-
 .itemCountBtnQuantityContainer {
    width: 100%;
 }
