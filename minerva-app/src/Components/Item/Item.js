@@ -1,22 +1,30 @@
+import { useState } from 'react';
 import React from 'react'
 import './Item.css';
-// import itemName from '../../Assets/ImgsProductos1.png'
-import itemImageURL from '../../Assets/ImgsProductos1.png'
-// import itemPrice from '../../Assets/ImgsProductos1.png'
+import ItemList from '../ItemList/ItemList';
 
-const itemName = 'Anillo Zafiro Bodicea';
-// const itemImageURL = '../../Assets/ImgsProductos1.png';
-const itemPrice = '$49.990';
 
 
 function Item() {
-  return (
+
+  const [itemList, setItemList] = useState(ItemList)
+
+  return ( 
     <div>
-        <h6 className='itemTitle'>{itemName}</h6>
-        <div className='itemImgContainer'> <img alt='' src={itemImageURL} className='itemImage'></img> </div>
-        <h6 className='itemPrice'>{itemPrice}</h6>
+     {Item.map((itemList) => {
+        return (
+          {itemList}
+      )
+      })
+      }
     </div>
   )
 }
 
 export default Item
+
+// <h6 className='itemTitle'>{itemName}</h6>
+//         <div className='itemImgContainer'> <img alt='' src={itemImageURL} className='itemImage'></img> </div>
+//         <h6 className='itemPrice'>{itemPrice}</h6>
+
+/* <ItemList key={ItemList.id} name={ItemList.itemName} img={ItemList.itemImageURL} price={ItemList.itemPrice} />  */

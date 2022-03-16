@@ -2,7 +2,6 @@ import {useState} from 'react';
 import './ItemCount.css';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
-import Item from '../Item/Item';
 
 export default 
 
@@ -32,7 +31,6 @@ const addtoBag = () => {
   return (
     <>
     <div className='itemCountContainer'>
-      <Item></Item>
       <ButtonGroup aria-label="Basic example" className='itemCountBtnQuantityContainer'>
         <Button variant="secondary" className='itemCountBtnQuantity' onClick={() => handlerCountMinus()}>-1</Button>
         <Button variant="secondary" className='itemCountBtnQuantity' disabled>{count}</Button>
