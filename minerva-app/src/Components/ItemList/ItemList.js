@@ -1,34 +1,20 @@
-const promise = new Promise((resolve, reject) => {
-  let boolean = true;
+import React from 'react'
+import prods from '../../Containers/ItemListContainer'
+import Item from '../Item/Item'
 
-  if(boolean) {
-
-    setTimeout(() => {
-      alert('time out')
-    }, 5000);
-
-    resolve('promise resolved');
-
-  } else {
-
-    reject('promise rejected');
-  }
-
-});
+function ItemList() {
+  return (
+    <>
+    <div>ItemList</div>
+    { 
+    prods.map((Items)    =>
+    <Item key={Items.id} itemName={Items.itemName} /> )}
 
 
-promise
-  .then((res) => console.log(res))
-  .catch((error) => console.log(error))
-  .finally(console.log('Final'));
+    
+    </>
+    
+  ) }
 
-
-
-
-const ItemList = [  
-{id:'1',category:'Anillos',itemName:'Anillo Zafiro Bodicea',itemImageURL:'../../Assets/ImgsProductos1.png',itemPrice: 49.990}
-];
-
-JSON.parse(ItemList);
 
 export default ItemList
