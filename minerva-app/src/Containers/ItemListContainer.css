@@ -13,3 +13,9 @@ text-align: center;
 .greeting {
     padding-bottom: 100px;
 }
+
+.ItemsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}

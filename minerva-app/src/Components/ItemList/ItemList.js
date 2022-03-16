@@ -1,17 +1,13 @@
-import React from 'react'
-import prods from '../../Containers/ItemListContainer'
 import Item from '../Item/Item'
 
-function ItemList() {
+function ItemList({ prods }) {
   return (
     <>
-    <div>ItemList</div>
     { 
-    prods.map((Items)    =>
-    <Item key={Items.id} itemName={Items.itemName} /> )}
-
-
+    prods.map((prod) => <Item prod={prod} /> )
     
+    }
+
     </>
     
   ) }
