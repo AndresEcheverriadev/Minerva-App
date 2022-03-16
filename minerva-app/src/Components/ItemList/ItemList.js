@@ -4,10 +4,8 @@ function ItemList({ prods }) {
   return (
     <>
     { 
-    prods.map((prod) => <Item prod={prod} /> )
-    
+    prods.map((prod) => <Item key={prod.id} prod={prod} /> )
     }
-
     </>
     
   ) }
