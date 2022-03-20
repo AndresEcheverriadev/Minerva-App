@@ -1,32 +1,13 @@
 import { useEffect, useState } from "react";
 import ItemList from "../Components/ItemList/ItemList";
 import './ItemListContainer.css';
-
-const Items = [  
-  {id:'1',category:'Anillos',itemName:'Anillo Zafiro Bodicea',itemImageURL:'/Assets/ImgsProductos1.png',itemPrice: 49.990},
-  {id:'2',category:'Collares',itemName:'Collar Colores Ceres',itemImageURL:'/Assets/ImgsProductos2.png',itemPrice: 60.990},
-  {id:'3',category:'Aros',itemName:'Aros Cobre Afrodita',itemImageURL:'/Assets/ImgsProductos3.png',itemPrice: 39.990},
-  {id:'4',category:'Anillos',itemName:'Anillo Diamante Freya',itemImageURL:'/Assets/ImgsProductos4.png',itemPrice: 39.990}
-];
-
-const promise = new Promise((resolve, reject) => {
-  let boolean = true;
-  if(boolean) {
-    setTimeout(() => { 
-      resolve(Items);
-    }, 2000);
-  }
-   
-  else {
-    reject('promise rejected');
-  }
-});
+import {getProducts} from './promiser'
 
 function ItemListContainer({greeting}) {
   const [prods, setProds]   = useState([])
 
   useEffect(() => {
-    promise
+    getProducts
     .then(response => setProds(response))
     .catch((error) => console.log(error))
     .finally(console.log('Loaded'));

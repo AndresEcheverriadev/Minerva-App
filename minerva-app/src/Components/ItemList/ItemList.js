@@ -1,10 +1,10 @@
-import Item from '../Item/Item'
+import ItemDetail from '../ItemDetail/ItemDetail'
 
 function ItemList({ prods }) {
   return (
     <>
     { 
-    prods.map((prod) => <Item key={prod.id} prod={prod} /> )
+    prods.map((prod) => <ItemDetail key={prod.id} prod={prod} /> )
     }
     </>
     
