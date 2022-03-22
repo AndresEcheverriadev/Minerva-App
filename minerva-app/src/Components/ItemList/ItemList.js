@@ -1,14 +1,12 @@
+import Item from '../Item/Item'
 import ItemDetail from '../ItemDetail/ItemDetail'
 
-function ItemList({ prods }) {
+function ItemList({products}) {
   return (
     <>
-    { 
-    prods.map((prod) => <ItemDetail key={prod.id} prod={prod} /> )
-    }
+      {products.map((product) => <Item key={product.Id} product={product}/>)}
     </>
-    
-  ) }
+  )}
 
 
 export default ItemList

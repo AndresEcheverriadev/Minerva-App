@@ -4,11 +4,11 @@ import './ItemListContainer.css';
 import {getProducts} from './promiser'
 
 function ItemListContainer({greeting}) {
-  const [prods, setProds]   = useState([])
+  const [products, setProducts]   = useState([])
 
   useEffect(() => {
     getProducts
-    .then(response => setProds(response))
+    .then(response => setProducts(response))
     .catch((error) => console.log(error))
     .finally(console.log('Loaded'));
 
@@ -18,7 +18,7 @@ function ItemListContainer({greeting}) {
     <div className='itemListContainer'>
       <div className='greeting'>{greeting}</div>
       <div className="ItemsContainer">
-        <ItemList prods={prods} />
+        <ItemList products={products} />
       </div>
     </div>
   )
