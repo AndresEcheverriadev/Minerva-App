@@ -5,6 +5,7 @@ import Nav  from "react-bootstrap/Nav"
 import NavDropdown  from "react-bootstrap/NavDropdown"
 import CartWidget from "../Widgets/CartWidget"
 import BrandLogo from "../BrandLogo/BrandLogo"
+import { NavLink, Link } from 'react-router-dom'
 
 
 function NavBar() {
@@ -12,14 +13,15 @@ function NavBar() {
 <>
   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
-    <Navbar.Brand href="#home">
-      <BrandLogo></BrandLogo>
-    </Navbar.Brand>
+    <NavLink to='/' >
+      <BrandLogo/>
+    </NavLink>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="me-auto">
         <Nav.Link href="#features">Nosotros</Nav.Link>
         <NavDropdown title="Joyas" id="collasible-nav-dropdown">
+          <NavDropdown.Item href="#action/2.1">Aros</NavDropdown.Item>
           <NavDropdown.Item href="#action/2.1">Anillos</NavDropdown.Item>
           <NavDropdown.Item href="#action/2.2">Collares</NavDropdown.Item>
           <NavDropdown.Item href="#action/2.3">Pulseras</NavDropdown.Item>
@@ -32,9 +34,9 @@ function NavBar() {
         </NavDropdown>
       </Nav>
       <Nav>
-        <Nav.Link href="#deets">
-          <CartWidget></CartWidget>
-        </Nav.Link>
+        <NavLink to='bolsa' >
+          <CartWidget />
+        </NavLink>
       </Nav>
     </Navbar.Collapse>
     </Container>

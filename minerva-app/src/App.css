@@ -1,7 +1,13 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   background-color: black;
   background: #000;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
 }
 
 .App-logo {

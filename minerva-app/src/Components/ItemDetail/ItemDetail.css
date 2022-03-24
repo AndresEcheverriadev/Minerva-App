@@ -1,17 +1,14 @@
-.ItemContainer {
+.ItemDetailContainer {
     display: flex;
     flex-direction: column; 
     align-items: center;
-    justify-content: top;
+    justify-content: center;
     text-align: center;
-    gap: 5px;
-    width: 100%; 
-    height: 100%;
-    top: 0px;  
+    width: 50%;
 }
 
 .itemCategory {
-    height: 100%;
+    width: 100%;
     font-size: 12px;
     color: #cccccc;
     text-decoration: underline;
@@ -28,13 +25,13 @@
     background-color: #cccccc;
 }
 
-.ItemDetailContainer {
+.ItemDetailContainer2 {
     border-style:solid;
     border-width: 2px;
     border-color: #cccccc;
-    height: 100%;
     border-radius: 5px;
     padding: 1px;
+    width: 100%;
 }
 
 .itemTitle {

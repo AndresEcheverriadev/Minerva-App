@@ -1,5 +1,4 @@
 import Item from '../Item/Item'
-import ItemDetail from '../ItemDetail/ItemDetail'
 
 function ItemList({products}) {
   return (

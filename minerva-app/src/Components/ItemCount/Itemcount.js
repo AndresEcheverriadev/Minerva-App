@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 
 
 
-function ItemCount ( {stock, initial, onAdd} ) {
+function ItemCount ( {stock, initial, addto} ) {
 const [count, setCount] = useState(initial); 
 
 const handlerCountPlus = () => {
