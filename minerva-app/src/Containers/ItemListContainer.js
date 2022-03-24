@@ -6,12 +6,12 @@ import {getProducts} from './promiser'
 
 function ItemListContainer({greeting}) {
   const [products, setProducts]   = useState([]);
-  const { id } = useParams;
+  const { categoriaid } = useParams();
 
   useEffect(() => {
-    if (id) {
+    if (categoriaid) {
         getProducts
-      .then(response => setProducts(response.filter(prod=> prod.categoria === id)))
+      .then(response => setProducts(response.filter(prod=> prod.categoria === categoriaid)))
       .catch((error) => console.log(error))
       .finally(console.log('Loaded'));
         
@@ -22,9 +22,9 @@ function ItemListContainer({greeting}) {
       .finally(console.log('Loaded'));
     }
 
-  },[id])
+  },[categoriaid])
 
-  console.log(id)
+  console.log(categoriaid)
   return (
     <div className='itemListContainer'>
       <div className='greeting'>{greeting}</div>
