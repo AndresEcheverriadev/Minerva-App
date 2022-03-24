@@ -5,7 +5,7 @@ function ItemDetail({product}) {
   return (
 <>
 <div className='ItemDetailContainer'>
-  <h6 className='itemCategory'>{product.Category}</h6>
+  <h6 className='itemCategory'>{product.categoria}</h6>
   <div className='itemImgContainer'> <img alt='' src={product.ImageURL} className='itemImage'></img> </div>
   <div className='ItemDetailContainer2'>
     <h6 className='itemTitle'>{product.Name}</h6>

@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemListDetail from "../Components/ItemListDetail/ItemListDetail";
+import ItemDetail from "../Components/ItemDetail/ItemDetail";
 import './ItemListDetailContainer.css';
 import {getProducts} from './promiser'
 
 function ItemListDetailContainer({greeting}) {
-  const [products, setProducts]   = useState([]);
+  const [product, setProduct]   = useState([]);
   const {detalleId} = useParams();
-  console.log(detalleId);
 
 
   useEffect(() => {
     getProducts
-    .then(response => setProducts(response))
+    .then(response => response.find(prod => prod.Id ===detalleId ))
+    .then(response => setProduct(response))
     .catch((error) => console.log(error))
     .finally(console.log('Loaded'));
 
@@ -22,7 +22,7 @@ function ItemListDetailContainer({greeting}) {
     <div className='itemListDetailContainer'>
       <div className='greeting'>{greeting}</div>
       <div className="ItemsDetailContainer">
-        <ItemListDetail products={products} />
+       <ItemDetail product={product}/>
       </div>
     </div>
   )

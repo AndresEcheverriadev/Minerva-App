@@ -19,12 +19,12 @@ function NavBar() {
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#features">Nosotros</Nav.Link>
+        <Nav.Link >Nosotros</Nav.Link>
         <NavDropdown title="Joyas" id="collasible-nav-dropdown">
-          <NavDropdown.Item href="#action/2.1">Aros</NavDropdown.Item>
-          <NavDropdown.Item href="#action/2.1">Anillos</NavDropdown.Item>
-          <NavDropdown.Item href="#action/2.2">Collares</NavDropdown.Item>
-          <NavDropdown.Item href="#action/2.3">Pulseras</NavDropdown.Item>
+        <NavDropdown.Item href=""><NavLink to="categoria/Aros">Aros</NavLink></NavDropdown.Item>
+        <NavDropdown.Item href=""><NavLink to="categoria/Anillos">Anillos</NavLink></NavDropdown.Item>
+        <NavDropdown.Item href=""><NavLink to="categoria/Collares">Collares</NavLink></NavDropdown.Item>
+        <NavDropdown.Item href=""><NavLink to="categoria/Pulseras">Pulseras</NavLink></NavDropdown.Item>
         </NavDropdown>
         <NavDropdown title="Ropa" id="collasible-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Tops</NavDropdown.Item>
