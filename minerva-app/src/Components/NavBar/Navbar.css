@@ -4,4 +4,18 @@
     height:150px !important; */
     background-color: black !important;
     width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+.me-auto, .navbar-nav {
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
 }
