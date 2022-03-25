@@ -11,12 +11,12 @@ function ItemListDetailContainer({greeting}) {
 
   useEffect(() => {
     getProducts
-    .then(response => response.find(prod => prod.Id ===detalleId ))
+    .then(response => response.find(prod => prod.Id === detalleId ))
     .then(response => setProduct(response))
     .catch((error) => console.log(error))
     .finally(console.log('Loaded'));
 
-  },[])
+  },[]);
 
   return (
     <div className='itemListDetailContainer'>
