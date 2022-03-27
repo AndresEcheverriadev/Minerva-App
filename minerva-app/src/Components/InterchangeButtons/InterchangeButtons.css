@@ -1,0 +1,22 @@
+.itemCountBtnAddOnContainer {
+    width: 100% !important;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.itemCountBtnAddOn button {
+    font-size: 14px;
+    width: 100% !important;
+    align-items: center;
+    text-align: center;
+    color: #cccccc;
+}
+
+.BtnComprando button {
+    width: 100% !important;
+}
+
+.BtnToBag button {
+    width: 100% !important;
+}
