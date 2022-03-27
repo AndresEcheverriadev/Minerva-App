@@ -1,14 +1,21 @@
+import {lazy, Suspense } from 'react';
 import { BrowserRouter, Routes , Route, Navigate } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Spinner } from 'react-bootstrap';
 import NavBar from './Components/NavBar/NavBar';
-import ItemListContainer from './Containers/ItemListContainer'
 import ItemDetailContainer from './Containers/ItemDetailContainer';
 import BolsaCompras from './Components/Bolsa/BolsaCompras';
 import NosotrosPage from './Components/Nosotros/NosotrosPage';
 
+const ItemListContainer = lazy(() => import('./Containers/ItemListContainer'))
+
+
+
+
 function App() {
   return (
+    <Suspense fallback={<Spinner animation="border" role="status" variant="warning"><span className="visually-hidden">Loading...</span></Spinner>}> 
     <BrowserRouter>
     <div className="App">  
       <NavBar />
@@ -22,6 +29,7 @@ function App() {
         </Routes>
     </div>
     </BrowserRouter>
+    </Suspense>
   );
 }
 

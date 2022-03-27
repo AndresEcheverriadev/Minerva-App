@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import {Suspense } from 'react';
 import { useParams } from "react-router-dom";
+import { Spinner } from 'react-bootstrap';
 import ItemList from "../Components/ItemList/ItemList";
 import './ItemListContainer.css';
 import {getProducts} from './promiser'
@@ -24,14 +26,15 @@ function ItemListContainer({greeting}) {
 
   },[categoriaid])
 
-  console.log(categoriaid)
   return (
-    <div className='itemListContainer'>
-      <div className='greeting'>{greeting}</div>
-      <div className="ItemsContainer">
-        <ItemList products={products} />
+    <Suspense fallback={<Spinner animation="border" role="status" variant="warning"><span className="visually-hidden">Loading...</span></Spinner>}> 
+      <div className='itemListContainer'>
+        <div className='greeting'>{greeting}</div>
+        <div className="ItemsContainer">
+          <ItemList products={products} />
+        </div>
       </div>
-    </div>
+    </Suspense>
   )
 }
 
