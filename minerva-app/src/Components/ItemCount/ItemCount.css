@@ -5,7 +5,7 @@
     justify-content: center;
     flex-wrap:nowrap;
     gap: 5px;
-    width: 100%;
+    width:auto;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -21,6 +21,10 @@
     color: #cccccc;
 }
 
+.itemCountBtnAddOnContainer {
+    width: 100%;
+}
+
 .itemCountBtnAddOn {
     font-size: 14px;
     width: 100% !important;
@@ -29,3 +33,6 @@
     color: #cccccc;
 }
 
+.BtnComprando {
+    width: 100% !important;
+}

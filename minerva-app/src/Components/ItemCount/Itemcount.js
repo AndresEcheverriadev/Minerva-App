@@ -2,6 +2,7 @@ import {useState} from 'react';
 import './ItemCount.css';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
+import CartWidget from '../Widgets/CartWidget';
 
 
 
@@ -36,7 +37,10 @@ const addtoBag = () => {
         <Button variant="secondary" className='itemCountBtnQuantity' disabled>{count}</Button>
         <Button variant="secondary" className='itemCountBtnQuantity' onClick={() => handlerCountPlus()}>+1</Button>
       </ButtonGroup>
-      <Button variant="outline-light" className='itemCountBtnAddOn'onClick={() => addtoBag()}>Agregar a la compra</Button>
+        <div className='itemCountBtnAddOnContainer'>
+        <Button variant="outline-light" className='itemCountBtnAddOn'onClick={() => addtoBag()}><CartWidget/>Agregar a la compra</Button>
+        </div>
+        <Button variant="light" className='BtnComprando'>Seguir comprando</Button>
     </div>
   </>
     

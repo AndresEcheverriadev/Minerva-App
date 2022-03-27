@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../Components/ItemDetail/ItemDetail";
-import './ItemListDetailContainer.css';
+import './ItemDetailContainer.css';
 import {getProducts} from './promiser'
 
-function ItemListDetailContainer({greeting}) {
+function ItemDetailContainer({greeting}) {
   const [product, setProduct]   = useState([]);
   const {detalleId} = useParams();
 
@@ -19,13 +19,13 @@ function ItemListDetailContainer({greeting}) {
   },[]);
 
   return (
-    <div className='itemListDetailContainer'>
+    <div className='itemDetailContainerOut'>
       <div className='greeting'>{greeting}</div>
-      <div className="ItemsDetailContainer">
+      <div className="ItemsDetailContainerIn">
        <ItemDetail product={product}/>
       </div>
     </div>
   )
 }
 
-export default ItemListDetailContainer
+export default ItemDetailContainer

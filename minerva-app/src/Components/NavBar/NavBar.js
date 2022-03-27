@@ -19,12 +19,12 @@ function NavBar() {
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="me-auto">
-        <NavLink to='nosotros'>Nosotros</NavLink>
+        <NavLink to='nosotros' className='NavBarLinkNosotros' style={{color:'rgba(255,255,255,.55)'}}>Nosotros</NavLink>
         <NavDropdown title="Joyas" id="collasible-nav-dropdown">
-        <NavDropdown.Item href=""><NavLink to="categoria/Aros">Aros</NavLink></NavDropdown.Item>
-        <NavDropdown.Item href=""><NavLink to="categoria/Anillos">Anillos</NavLink></NavDropdown.Item>
-        <NavDropdown.Item href=""><NavLink to="categoria/Collares">Collares</NavLink></NavDropdown.Item>
-        <NavDropdown.Item href=""><NavLink to="categoria/Pulseras">Pulseras</NavLink></NavDropdown.Item>
+          <NavDropdown.Item href=""><NavLink to="categoria/Aros">Aros</NavLink></NavDropdown.Item>
+          <NavDropdown.Item href=""><NavLink to="categoria/Anillos">Anillos</NavLink></NavDropdown.Item>
+          <NavDropdown.Item href=""><NavLink to="categoria/Collares">Collares</NavLink></NavDropdown.Item>
+          <NavDropdown.Item href=""><NavLink to="categoria/Pulseras">Pulseras</NavLink></NavDropdown.Item>
         </NavDropdown>
         <NavDropdown title="Ropa" id="collasible-nav-dropdown">
           <NavDropdown.Item href=""><NavLink to="categoria/Tops">Tops</NavLink></NavDropdown.Item>

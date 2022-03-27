@@ -12,13 +12,15 @@
 
 .greeting {
     padding-bottom: 50px;
+    width: 100%;
 }
 
 .ItemsContainer {
     display: flex;
     flex-direction: row;
-    gap: 15px;
-    align-items: center;
-    align-content: center;
+    gap: 40px;
+    align-items: flex-start;
     justify-content: center;
+    width: auto;
+    flex-wrap: wrap;    
 }
