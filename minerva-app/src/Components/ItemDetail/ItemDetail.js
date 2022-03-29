@@ -2,6 +2,12 @@ import './ItemDetail.css'
 import ItemCount from "../ItemCount/ItemCount";
 
 function ItemDetail({product}) {
+
+  const onAdd= () => {
+    console.log('tobag')
+
+}
+
   return (
 <>
   <div className='itemDetailContainer'>
@@ -16,7 +22,7 @@ function ItemDetail({product}) {
   <div className='itemDetailContainer3'>
     <div className='itemCounterDetail'>
       <h6 className='itemDetailStock'>Disponible: {product.stock}</h6>
-      <ItemCount stock={product.stock} initial={1} />
+      <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
     </div>
     <div className='itemDetailRecomendation'>
       <h6 className='itemDetailTextRecomendation'>También podría gustarte</h6>
