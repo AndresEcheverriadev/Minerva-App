@@ -6,8 +6,7 @@
     text-align: center;
     width:auto;
     gap: 5px;
-    padding-bottom: 40px;
-   
+    padding-bottom: 40px; 
 }
 
 
@@ -20,7 +19,7 @@
     border-style:solid;
     border-width: 2px;
     border-color: #cccccc;
-    width: 100%;
+    width: auto;
     height: auto;
     border-radius: 5px;
     padding: 1px;
@@ -30,15 +29,20 @@
 .itemPrice {
     width: 100%;
     height: auto;
-    font-size: 14px;
+    font-size: 16px;
     color: #cccccc;
-    padding-top: 5px;
+    padding: 5px;
+}
+
+.linkContainer {
+    width: 100%;
 }
 
 .btntoDetails {
     font-size: 14px;
-    width: 100% !important;
+    width: 100% ;
     align-items: center;
     text-align: center;
     color: #cccccc;
 }
+

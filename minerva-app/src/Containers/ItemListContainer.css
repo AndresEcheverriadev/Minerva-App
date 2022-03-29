@@ -1,26 +1,17 @@
 .itemListContainer {
     color: #ffff;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     align-content: center;
     justify-content: center;
     gap: 10px;
-    width: 50%;
+    width: 60%;
     text-align: center;
 }
 
 .greeting {
-    padding-bottom: 50px;
     width: 100%;
-}
-
-.ItemsContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    align-items: flex-start;
-    justify-content: center;
-    width: auto;
-    flex-wrap: wrap;    
+    color: #ffff;
 }

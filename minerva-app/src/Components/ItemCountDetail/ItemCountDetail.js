@@ -5,7 +5,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
 import CartWidget from '../Widgets/CartWidget';
 
-function ItemCount ( {stock, initial} ) {
+function ItemCount ( {stock, initial ,onAdd} ) {
 const [count, setCount] = useState(initial); 
 
 const handlerCountPlus = () => {
@@ -23,28 +23,55 @@ const handlerCountMinus = () => {
   }
 };
 
-const InputAddtoBag= ()=> {
+const InputAddtoBag= ({handleInter})=> {
   return ( 
-  <Button variant="outline-light" className='itemCountBtnAddOn'onClick={onAdd}><CartWidget/> Agregar a la compra</Button>
+  <div className='itemCountBtnAddOnContainer'>
+      <Button variant="outline-light" className='itemCountBtnAddOn'onClick={handleInter}><CartWidget/>Agregar a la compra</Button>
+  </div>
   )
 
 }
 
-const onAdd = (count) =>{
-  console.log(onAdd);
+const InputContinue= ()=> {
+  return (
+      <>  
+          <Link to='/' >
+              <Button variant="outline-light" className='BtnComprando'>Seguir comprando</Button>
+          </Link>
+          <Link to='/bolsa' >
+              <Button variant="light" className='BtnToBag'>Terminar compra</Button>
+          </Link>
+      </>
+  )
+}
+
+const [inputType, setInputType ] = useState('buttonsetadd')
+
+const handleInter=()=>{
+  setInputType('buttonsetcontinue');
+  onAdd(count);
 }
 
 
 
 return (
+  <>
     <div className='itemCountContainer'>
       <ButtonGroup aria-label="Basic example" className='itemCountBtnQuantityContainer'>
         <Button variant="secondary" className='itemCountBtnQuantity' onClick={() => handlerCountMinus()}>-1</Button>
         <Button variant="secondary" className='itemCountBtnQuantity' disabled>{count}</Button>
         <Button variant="secondary" className='itemCountBtnQuantity' onClick={() => handlerCountPlus()}>+1</Button>
       </ButtonGroup>
-      <InputAddtoBag />
+      {
+                inputType === 'buttonsetadd' ? 
+                    <InputAddtoBag handleInter={handleInter} />
+                : 
+                    <InputContinue />
+      }
+
     </div>
+</>
+  
 )
 }
 

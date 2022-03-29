@@ -28,11 +28,9 @@ function ItemListContainer({greeting}) {
 
   return (
     <Suspense fallback={<Spinner animation="border" role="status" variant="warning"><span className="visually-hidden">Loading...</span></Spinner>}> 
+      <div className='greeting'>{greeting}</div>
       <div className='itemListContainer'>
-        <div className='greeting'>{greeting}</div>
-        <div className="ItemsContainer">
           <ItemList products={products} />
-        </div>
       </div>
     </Suspense>
   )
