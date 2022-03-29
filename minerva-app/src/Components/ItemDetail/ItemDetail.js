@@ -1,5 +1,5 @@
 import './ItemDetail.css'
-import ItemCount from "../ItemCount/ItemCount";
+import ItemCountDetail from "../ItemCountDetail/ItemCountDetail";
 
 function ItemDetail({product}) {
 
@@ -22,7 +22,7 @@ function ItemDetail({product}) {
   <div className='itemDetailContainer3'>
     <div className='itemCounterDetail'>
       <h6 className='itemDetailStock'>Disponible: {product.stock}</h6>
-      <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
+      <ItemCountDetail stock={product.stock} initial={1} onAdd={onAdd} />
     </div>
     <div className='itemDetailRecomendation'>
       <h6 className='itemDetailTextRecomendation'>También podría gustarte</h6>

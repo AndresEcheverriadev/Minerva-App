@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import './ItemCount.css';
+import './ItemCountDetail.css';
 import { Link } from "react-router-dom";
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
@@ -25,23 +25,21 @@ const handlerCountMinus = () => {
 
 const InputAddtoBag= ({handleInter})=> {
   return ( 
-  <div className='itemCountBtnAddOnContainer'>
-      <Button variant="outline-light" className='itemCountBtnAddOn'onClick={handleInter}><CartWidget/>Agregar a la compra</Button>
-  </div>
+    <Button variant="outline-light" className='itemCountDetailBtnAddOn'onClick={handleInter}><CartWidget/>Agregar a la compra</Button>
   )
 
 }
 
 const InputContinue= ()=> {
   return (
-      <>  
-          <Link to='/' >
-              <Button variant="outline-light" className='BtnComprando'>Seguir comprando</Button>
+      <div className='inputContinueContainer'>  
+          <Link to='/' className='linkBtnContainer'>
+              <Button variant="outline-light" className='btnComprando'>Seguir comprando</Button>
           </Link>
-          <Link to='/bolsa' >
-              <Button variant="light" className='BtnToBag'>Terminar compra</Button>
+          <Link to='/bolsa' className='linkBtnContainer'>
+              <Button variant="light" className='btnToBag'>Terminar compra</Button>
           </Link>
-      </>
+      </div>
   )
 }
 
@@ -55,23 +53,20 @@ const handleInter=()=>{
 
 
 return (
-  <>
-    <div className='itemCountContainer'>
+    <div className='itemDetailCountContainer'>
       <ButtonGroup aria-label="Basic example" className='itemCountBtnQuantityContainer'>
         <Button variant="secondary" className='itemCountBtnQuantity' onClick={() => handlerCountMinus()}>-1</Button>
         <Button variant="secondary" className='itemCountBtnQuantity' disabled>{count}</Button>
         <Button variant="secondary" className='itemCountBtnQuantity' onClick={() => handlerCountPlus()}>+1</Button>
       </ButtonGroup>
-      {
-                inputType === 'buttonsetadd' ? 
-                    <InputAddtoBag handleInter={handleInter} />
-                : 
-                    <InputContinue />
-      }
-
+        {
+                  inputType === 'buttonsetadd' ?
+                  
+                      <InputAddtoBag handleInter={handleInter} />
+                  : 
+                      <InputContinue /> 
+        }
     </div>
-</>
-  
 )
 }
 
