@@ -14,7 +14,7 @@ function ItemDetailContainer({greeting}) {
     .then(response => response.find(prod => prod.Id === detalleId ))
     .then(response => setProduct(response))
     .catch((error) => console.log(error))
-    .finally(console.log('Loaded'));
+    .finally();
 
   },[]);
 

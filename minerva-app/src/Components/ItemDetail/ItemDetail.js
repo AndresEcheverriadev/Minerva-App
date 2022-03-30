@@ -17,7 +17,7 @@ function ItemDetail({product}) {
   <div className='itemDetailContainer3'>
     <div className='itemCounterDetail'>
       <h6 className='itemDetailStock'>Disponible: {product.stock}</h6>
-      <ItemCountDetail stock={product.stock} initial={1} producto={product}  />
+      <ItemCountDetail stock={product.stock} initial={1} product={product}  />
     </div>
     <div className='itemDetailRecomendation'>
       <h6 className='itemDetailTextRecomendation'>También podría gustarte</h6>

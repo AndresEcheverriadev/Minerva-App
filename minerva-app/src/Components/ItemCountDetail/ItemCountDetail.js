@@ -1,21 +1,15 @@
-import { useBagContext } from '../../Context/BagContext';
-import {useState} from 'react';
+import {useState,useContext} from 'react';
+import {BagContext} from '../../Context/BagContext';
 import './ItemCountDetail.css';
 import { Link } from "react-router-dom";
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
 import CartWidget from '../Widgets/CartWidget';
 
-function ItemCount ( {stock, initial , producto} ) {
+function ItemCount ( {stock, initial , product} ) {
 const [count, setCount] = useState(initial); 
 const [onBag,setOnBag] = useState(false);
-const [addToBag] = useBagContext();
-
-const bagAdd= (count) => {
-  console.log('tobag');
-  addToBag({...producto, cantidad:count});
-  setOnBag(true);
-}
+const {addToBag}= useContext(BagContext);
 
 const handlerCountPlus = () => {
   if (count < stock) {
@@ -54,9 +48,17 @@ const InputContinue= ()=> {
 
 const [inputType, setInputType ] = useState('buttonsetadd')
 
+
+const onAdd= () => {
+  let bag ={...product, cantidad: count}
+  addToBag(bag);
+  setOnBag(true);
+  console.log(bag)
+}
+
 const handleInter=()=>{
   setInputType('buttonsetcontinue');
-  bagAdd(count);
+  onAdd();
 }
 
 

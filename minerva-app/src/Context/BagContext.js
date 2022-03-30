@@ -1,9 +1,7 @@
 import React from 'react'
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState } from 'react';
 
-const BagContext = createContext([])
-
-export const useBagContext = () => useContext(BagContext)
+export const BagContext = createContext([])
 
 function BagContextProvider({children}) {
     const [bagList, setBagList] = useState([])

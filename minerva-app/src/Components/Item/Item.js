@@ -12,7 +12,7 @@ function Item({product}) {
     <Link to={`/detalle/${product.Id}`} className='linkContainer' >
       <Button variant="outline-light" className='btntoDetails' >Detalles</Button>
     </Link>
-  <ItemCount stock={product.stock} initial={1} />
+  <ItemCount stock={product.stock} initial={1} product={product} />
 </div> 
   )
 }

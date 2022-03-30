@@ -21,7 +21,7 @@ function ItemListContainer({greeting}) {
         getProducts
       .then(response => setProducts(response))
       .catch((error) => console.log(error))
-      .finally(console.log('Loaded'));
+      .finally();
     }
 
   },[categoriaid])
