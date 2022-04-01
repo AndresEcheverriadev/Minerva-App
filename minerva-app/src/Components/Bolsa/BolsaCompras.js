@@ -1,3 +1,4 @@
+import Button  from 'react-bootstrap/Button';
 import { useContext } from 'react'
 import {BagContext} from '../../Context/BagContext';
 import './BolsaCompras.css'
@@ -8,9 +9,16 @@ function BolsaCompras({greeting}) {
   
   console.log(bagList)
 
-  return (
-    <div className='bolsaContainer'>{greeting}</div>
+  const borrar = () =>{
+    console.log('borrar'); 
+    deleteItem();
+  }
 
+  return (
+    <>
+    <div className='bolsaContainer'>{greeting}</div>
+    <Button onClick={borrar}>borrar</Button>
+    </>
   )
 }
 

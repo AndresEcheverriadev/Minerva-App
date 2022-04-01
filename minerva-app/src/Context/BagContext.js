@@ -26,8 +26,8 @@ function BagContextProvider({children}) {
         setBagList([])
     }
     
-    const deleteItem = (item) =>{
-        setBagList( [ ...bagList, item ] )
+    const deleteItem = () =>{
+       bagList.splice(bagList[0],1);
     }
 
 
