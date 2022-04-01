@@ -7,7 +7,19 @@ function BagContextProvider({children}) {
     const [bagList, setBagList] = useState([])
 
     const addToBag=(item)=>{
-        setBagList( [ ...bagList, item ] )
+
+        const findDuplicates = bagList.find(
+            (found) => found.Id === item.Id
+          );
+
+        if (findDuplicates) {
+            findDuplicates.cantidad += 1; 
+            setBagList( [ ...bagList]);
+            console.log('duplicado')
+        } else {
+            setBagList( [ ...bagList, item ] )
+            console.log('no duplicado')
+        }       
     }
     
     const deleteFromBag= () =>{
