@@ -8,7 +8,7 @@ import CartWidget from '../Widgets/CartWidget';
 function ItemCount ( {stock, initial, product} ) {
 const [count, setCount] = useState(initial);
 const [onBag,setOnBag] = useState(false);
-const {addToBag} = useContext(BagContext);
+const {addToBag, bagList} = useContext(BagContext);
 
 const handlerCountPlus = () => {
   if (count < stock) {
@@ -25,11 +25,23 @@ const handlerCountMinus = () => {
   }
 };
 
-const onAdd = () =>{
+const onAdd = (Id) =>{
+
   let bag ={...product, cantidad: count}
-  addToBag(bag);
-  setOnBag(true);
-  console.log('to bag from IC')
+  let justQuantity = {cantidad: count}
+
+  const duplicated =  bagList.find( productox => productox.Id === Id)
+
+  if (duplicated) {
+    addToBag(justQuantity);
+    console.log('Duplicado')
+  } else {
+    addToBag(bag);
+    console.log('No duplicado')
+
+  }
+
+ 
 }
 
 //trasladar a archivo propio - no conviene crear y llamar 

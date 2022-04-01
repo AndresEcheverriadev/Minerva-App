@@ -11,8 +11,6 @@ import NosotrosPage from './Components/Nosotros/NosotrosPage';
 
 const ItemListContainer = lazy(() => import('./Containers/ItemListContainer'))
 
-console.log(BagContextProvider);
-
 function App() {
   return (
     <Suspense fallback={<Spinner animation="border" role="status" variant="warning"><span className="visually-hidden">Loading...</span></Spinner>}> 
