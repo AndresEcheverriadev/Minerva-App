@@ -4,7 +4,7 @@ import './BolsaCompras.css'
 
 function BolsaCompras({greeting}) {
 
-  const {bagList,deleteFromBag} = useContext(BagContext);
+  const {bagList,deleteItem,clearBag} = useContext(BagContext);
   
   console.log(bagList)
 
