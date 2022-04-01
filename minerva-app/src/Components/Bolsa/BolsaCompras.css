@@ -1,4 +1,43 @@
-.bolsaContainer {
+.bagPageContainer {
     color: #cccccc;
-    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 90%;
+    justify-content: center;
+}
+
+.inBagContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+
+.bagListContainer {
+    display: flex;
+    flex-direction: row;
+    /* background-color: blue; */
+    justify-content: left;
+    width: 60%;
+    border-style:solid;
+    border-width: 2px;
+    border-color: #cccccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.buyControlsContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: #cccccc;
+    justify-content: right;
+    width: 40%;
+    border-style:solid;
+    border-width: 2px;
+    border-color: #cccccc;
+    border-radius: 5px;
+    padding: 10px;
 }
