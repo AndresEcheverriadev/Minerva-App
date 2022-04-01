@@ -9,7 +9,7 @@ import CartWidget from '../Widgets/CartWidget';
 function ItemCount ( {stock, initial , product} ) {
 const [count, setCount] = useState(initial); 
 const [onBag,setOnBag] = useState(false);
-const {addToBag}= useContext(BagContext);
+const {addToBag, bagList} = useContext(BagContext);
 
 const handlerCountPlus = () => {
   if (count < stock) {
@@ -48,20 +48,17 @@ const InputContinue= ()=> {
 
 const [inputType, setInputType ] = useState('buttonsetadd')
 
-
 const onAdd= () => {
   let bag ={...product, cantidad: count}
   addToBag(bag);
   setOnBag(true);
-  console.log(bag)
+  console.log('to bag from ICD')
 }
 
 const handleInter=()=>{
   setInputType('buttonsetcontinue');
   onAdd();
 }
-
-
 
 return (
     <div className='itemDetailCountContainer'>

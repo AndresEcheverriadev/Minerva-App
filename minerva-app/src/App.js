@@ -2,7 +2,7 @@ import {lazy, Suspense,} from 'react';
 import { BrowserRouter, Routes , Route, Navigate } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import BagContextProvider from './Context/BagContext'
+import BagContextProvider from './Context/BagContext';
 import { Spinner } from 'react-bootstrap';
 import NavBar from './Components/NavBar/NavBar';
 import ItemDetailContainer from './Containers/ItemDetailContainer';
@@ -10,6 +10,8 @@ import BolsaCompras from './Components/Bolsa/BolsaCompras';
 import NosotrosPage from './Components/Nosotros/NosotrosPage';
 
 const ItemListContainer = lazy(() => import('./Containers/ItemListContainer'))
+
+console.log(BagContextProvider);
 
 function App() {
   return (
