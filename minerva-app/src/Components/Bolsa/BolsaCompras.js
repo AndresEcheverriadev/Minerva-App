@@ -10,8 +10,8 @@ function BolsaCompras({greeting}) {
   console.log(bagList)
 
   const borrar = () =>{
-    console.log('borrar'); 
     deleteItem();
+    console.log('borrar');
   }
 
   return (

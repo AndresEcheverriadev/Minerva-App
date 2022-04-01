@@ -26,8 +26,10 @@ function BagContextProvider({children}) {
         setBagList([])
     }
     
-    const deleteItem = () =>{
-       bagList.splice(bagList[0],1);
+    const deleteItem = (Id) =>{
+        // const indenterItem = bagList.filter(thisItem => thisItem.Id !== Id);
+        const indenterItem = bagList.filter(thisItem => thisItem.Id !== '1');
+        setBagList(indenterItem);
     }
 
 
