@@ -8,7 +8,7 @@ import CartWidget from '../Widgets/CartWidget';
 function ItemCount ( {stock, initial, product} ) {
 const [count, setCount] = useState(initial);
 const [onBag,setOnBag] = useState(false);
-const {addToBag,bagList} = useContext(BagContext);
+const {addToBag} = useContext(BagContext);
 
 const handlerCountPlus = () => {
   if (count < stock) {
