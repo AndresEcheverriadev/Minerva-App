@@ -5,6 +5,7 @@
     gap: 50px;
     width: 90%;
     justify-content: center;
+    padding-bottom: 100px;
 }
 
 .inBagContainer {
@@ -17,10 +18,9 @@
 
 .bagListContainer {
     display: flex;
-    flex-direction: row;
-    /* background-color: blue; */
-    justify-content: left;
-    width: 60%;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 75%;
     border-style:solid;
     border-width: 2px;
     border-color: #cccccc;
@@ -31,13 +31,32 @@
 
 .buyControlsContainer {
     display: flex;
-    flex-direction: row;
-    background-color: #cccccc;
-    justify-content: right;
-    width: 40%;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 25%;
     border-style:solid;
-    border-width: 2px;
+    border-width: 1px;
     border-color: #cccccc;
     border-radius: 5px;
     padding: 10px;
+}
+
+.btnClearBag {
+    width: 100%;
+    height: 5%;
+    font-size: 10px;
+    margin-bottom: auto;
+}
+
+.subtotalSum {
+    width: 100%;
+    height: 20%;
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.btnToCheckout {
+    width: 100%;
+    height: 10%;
+    font-size: 10px;
 }

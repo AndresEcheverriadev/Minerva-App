@@ -3,7 +3,7 @@ import {BagContext} from '../../Context/BagContext';
 import './ItemCount.css';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
-import CartWidget from '../Widgets/CartWidget';
+import CartItemtWidget from '../Widgets/CartItemWidget';
 
 function ItemCount ( {stock, initial, product} ) {
   const [count, setCount] = useState(initial); 
@@ -33,7 +33,7 @@ const onAdd = () =>{
 //trasladar a archivo propio - no conviene crear y llamar 
 const InputAddtoBag= ()=> {
   return (
-    <Button variant="outline-light" className='itemCountBtnAddOn'onClick={onAdd}><CartWidget/> Agregar a la compra</Button> 
+    <Button variant="outline-light" className='itemCountBtnAddOn'onClick={onAdd}><CartItemtWidget/> Agregar a la compra</Button> 
   )
 
 }

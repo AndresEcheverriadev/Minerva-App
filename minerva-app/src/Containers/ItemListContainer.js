@@ -6,7 +6,7 @@ import ItemList from "../Components/ItemList/ItemList";
 import './ItemListContainer.css';
 import {getProducts} from './promiser'
 
-function ItemListContainer({greeting}) {
+function ItemListContainer() {
   const [products, setProducts]   = useState([]);
   const { categoriaid } = useParams();
 
@@ -28,7 +28,6 @@ function ItemListContainer({greeting}) {
 
   return (
     <Suspense fallback={<Spinner animation="border" role="status" variant="warning"><span className="visually-hidden">Loading...</span></Spinner>}> 
-      <div className='greeting'>{greeting}</div>
       <div className='itemListContainer'>
           <ItemList products={products} />
       </div>

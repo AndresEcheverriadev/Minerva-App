@@ -2,33 +2,67 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-
 }
 
 .bagItemData {
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-between;
-
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
 }
 
-.bagitemTitle {
-    font-size: 14px;
-    color: #cccccc;
-}
-
-.bagitemImgContainer {
+.bagItemImgContainer {
     border-style:solid;
     border-width: 2px;
     border-color: #cccccc;
-    width: auto;
+    width: 10%;
     height: auto;
     border-radius: 5px;
     padding: 1px;
     background-color: #cccccc;
 }
 
-.bagitemImage {
-    width: 50% ;
+.bagItemImage {
+    max-width: 100% ;
+    max-height: 100%;
 }
+
+.bagItemTxtContainer {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    text-align: start;
+}
+
+.bagItemTitle {
+    font-size: 16px;
+    color: #cccccc;
+}
+
+.bagItemProductTxtContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.bagItemPrice {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.bagItemQuantity {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.bagItemSubtotal {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.btnDeleteItem {
+    /* margin-left: auto; */
+    width: 20%;
+ }

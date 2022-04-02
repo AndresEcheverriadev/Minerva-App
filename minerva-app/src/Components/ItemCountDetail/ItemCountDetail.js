@@ -4,7 +4,7 @@ import './ItemCountDetail.css';
 import { Link } from "react-router-dom";
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
-import CartWidget from '../Widgets/CartWidget';
+import CartItemtWidget from '../Widgets/CartItemWidget';
 
 function ItemCount ( {stock, initial , product} ) {
 const [count, setCount] = useState(initial); 
@@ -27,7 +27,7 @@ const handlerCountMinus = () => {
 
 const InputAddtoBag= ({handleInter})=> {
   return ( 
-    <Button variant="outline-light" className='itemCountDetailBtnAddOn'onClick={handleInter}><CartWidget/>Agregar a la compra</Button>
+    <Button variant="outline-light" className='itemCountDetailBtnAddOn'onClick={handleInter}><CartItemtWidget/> Agregar a la compra</Button>
   )
 
 }

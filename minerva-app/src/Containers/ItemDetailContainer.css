@@ -9,10 +9,6 @@
     text-align: center;
 }
 
-.greeting {
-    padding-bottom: 50px;
-}
-
 .ItemsDetailContainerIn {
     display: flex;
     flex-direction: row;

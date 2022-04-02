@@ -4,7 +4,7 @@ import ItemDetail from "../Components/ItemDetail/ItemDetail";
 import './ItemDetailContainer.css';
 import {getProducts} from './promiser'
 
-function ItemDetailContainer({greeting}) {
+function ItemDetailContainer() {
   const [product, setProduct]   = useState([]);
   const {detalleId} = useParams();
 
@@ -20,7 +20,6 @@ function ItemDetailContainer({greeting}) {
 
   return (
     <div className='itemDetailContainerOut'>
-      <div className='greeting'>{greeting}</div>
       <div className="ItemsDetailContainerIn">
        <ItemDetail product={product}/>
       </div>
