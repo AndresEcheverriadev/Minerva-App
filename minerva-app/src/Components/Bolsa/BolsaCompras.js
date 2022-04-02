@@ -35,7 +35,10 @@ function BolsaCompras({greeting}) {
         <div className='buyControlsContainer'>
             <Button variant='outline-secondary' className='btnClearBag' onClick={clearbag}>Limpiar bolsa de compras <ClearBagWidget /></Button>
             <hr></hr>
-            <h6 className='subtotalSum'>Subtotal: $199.950</h6>
+            <div className='sumsContainer'>
+              <h6 className='subtotalSum'>Subtotal: $199.950</h6>
+              <h6 className='totalProductos'>Cantidad de productos: 20</h6>
+            </div>
             <Button variant='outline-secondary' className='btnToCheckout' onClick={checkout}>Proceder al pago <CheckoutWidget /></Button>
         </div> 
       </div>
