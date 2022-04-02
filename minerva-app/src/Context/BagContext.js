@@ -5,6 +5,7 @@ export const BagContext = createContext([])
 
 function BagContextProvider({children}) {
     const [bagList, setBagList] = useState([])
+    const [NotItems, SetNoItems] = useState(false)
 
     const addToBag=(item,count)=>{
 
@@ -32,10 +33,20 @@ function BagContextProvider({children}) {
         setBagList(indenterItem);
     }
 
-
+    const itemsFinder = () => {
+        const existItems = bagList.find(
+            (found) => found === ''
+        ); 
+        if (existItems) {
+            SetNoItems(false)
+        }
+        else {
+            SetNoItems(true)
+        } 
+    }
 
     return (
-        <BagContext.Provider value={{bagList,addToBag,deleteItem,clearBag}}>
+        <BagContext.Provider value={{bagList,addToBag,deleteItem,clearBag,itemsFinder}}>
             { children }
         </BagContext.Provider>
     )
