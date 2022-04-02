@@ -45,8 +45,12 @@ function BagContextProvider({children}) {
         } 
     }
 
+    const calcSubTotalItem = bagList.reduce((acc,product) =>{
+        return  acc = parseInt(product.Price)*product.cantidad;
+    },0);
+
     return (
-        <BagContext.Provider value={{bagList,addToBag,deleteItem,clearBag,itemsFinder,NotItems}}>
+        <BagContext.Provider value={{bagList,addToBag,deleteItem,clearBag,itemsFinder,NotItems,calcSubTotalItem}}>
             { children }
         </BagContext.Provider>
     )

@@ -9,12 +9,14 @@ import DeleteItemWidget from '../Widgets/DeleteItemWidget'
 
 function BagItem({product}) {
     
-    const {bagList,deleteItem} = useContext(BagContext);
+    const {bagList,deleteItem,calcSubTotalItem} = useContext(BagContext);
 
     const deleteitem = () =>{
         deleteItem();
         console.log('borrar item');
     }
+
+   
 
   return (  
     <div className='bagItemContainer'>
@@ -27,7 +29,7 @@ function BagItem({product}) {
               <div className='bagItemProductTxtContainer'>
                 <h6 className='bagItemPrice'>Precio: {product.Price}</h6>
                 <h6 className='bagItemQuantity'>Cantidad: {product.cantidad}</h6>
-                <h6 className='bagItemSubtotal'>Subtotal: $199.950</h6>
+                <h6 className='bagItemSubtotal'>Subtotal: {calcSubTotalItem}</h6>
               </div>
             </div>
             <Button variant='outline-secondary' onClick={deleteitem} className='btnDeleteItem'>Quitar producto <DeleteItemWidget /></Button>
