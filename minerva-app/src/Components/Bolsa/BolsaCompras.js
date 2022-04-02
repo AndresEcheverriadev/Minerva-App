@@ -8,9 +8,10 @@ import Button  from 'react-bootstrap/Button';
 
 function BolsaCompras() {
 
-  const {bagList,clearBag,NotItems} = useContext(BagContext);
+  const {bagList,clearBag,NotItems,itemsFinder} = useContext(BagContext);
   
   console.log(bagList)
+  itemsFinder();
 
   const clearbag = () => {
     clearBag();
