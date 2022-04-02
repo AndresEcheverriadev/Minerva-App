@@ -1,5 +1,6 @@
 import BagItem from '../BagItem/BagItem';
-import { useContext } from 'react'
+import { Link } from "react-router-dom";
+import { useContext} from 'react'
 import {BagContext} from '../../Context/BagContext';
 import './BolsaCompras.css'
 import ClearBagWidget from '../Widgets/ClearBagWidget'
@@ -12,6 +13,7 @@ function BolsaCompras() {
   
   console.log(bagList)
   itemsFinder();
+  console.log(NotItems)
 
   const clearbag = () => {
     clearBag();
@@ -27,9 +29,18 @@ function BolsaCompras() {
   return (
     <div className='bagPageContainer'>
       {
-                  NotItems === false ?
-                  
-                      <h6> No hay Items </h6>
+                  NotItems === true ?
+                  <div className='noitemsContainer'>
+                    <h6> Aún no hay productos en tu bolsa de compra.  </h6>
+                    <h6> Hay algo especial esperando por ti </h6>
+                    <Link to='/' className='linkBtnContainer'>
+                      <Button  variant='light' className='btnBackItems'>Volver a los productos</Button>
+                    </Link> 
+                    <div className='videoNoItemContainer'> 
+                      <video className='video1' type="video/mp4" muted autoPlay loop src='/Assets/Videonoitem1baja.mp4'></video>
+                    </div>
+                  </div>
+                    
                   : 
                       <div className='inBagContainer' >
                         <div className='bagListContainer'>

@@ -46,7 +46,7 @@ function BagContextProvider({children}) {
     }
 
     return (
-        <BagContext.Provider value={{bagList,addToBag,deleteItem,clearBag,itemsFinder}}>
+        <BagContext.Provider value={{bagList,addToBag,deleteItem,clearBag,itemsFinder,NotItems}}>
             { children }
         </BagContext.Provider>
     )
