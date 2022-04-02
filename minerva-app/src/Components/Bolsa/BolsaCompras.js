@@ -44,10 +44,9 @@ function BolsaCompras() {
                   : 
                       <div className='inBagContainer' >
                         <div className='bagListContainer'>
-                            <BagItem />
-                            <BagItem />
-                            <BagItem />
-                            <BagItem />
+                          {
+                            bagList.map((product) => <BagItem key={product.Id} product={product}/>)
+                          }
                         </div>
                         <div className='buyControlsContainer'>
                             <Button variant='outline-secondary' className='btnClearBag' onClick={clearbag}>Limpiar bolsa de compras <ClearBagWidget /></Button>

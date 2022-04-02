@@ -28,9 +28,9 @@ function BagContextProvider({children}) {
     }
     
     const deleteItem = (Id) =>{
-        // const indenterItem = bagList.filter(thisItem => thisItem.Id !== Id);
-        const indenterItem = bagList.filter(thisItem => thisItem.Id !== '1');
+        const indenterItem = bagList.filter(thisItem => thisItem.Id !== Id);
         setBagList(indenterItem);
+        console.log('deleteItemfrombagcontext')
     }
 
     const itemsFinder = () => {
