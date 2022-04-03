@@ -63,6 +63,12 @@
 }
 
 .btnDeleteItem {
-    /* margin-left: auto; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 20%;
+    height: 30px;
+    font-size: 14px;
+    gap: 10px;
  }

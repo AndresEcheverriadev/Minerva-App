@@ -19,7 +19,7 @@ export const getProducts = new Promise((resolve, reject) => {
         if(boolean) {
           setTimeout(() => { 
             resolve(Items);
-          }, 5000);
+          }, 0);
         }
          
         else {

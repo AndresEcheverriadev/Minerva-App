@@ -24,15 +24,13 @@ function BolsaCompras() {
     console.log('to checkout');
   }
 
-  
-
   return (
     <div className='bagPageContainer'>
       {
                   NotItems === true ?
                   <div className='noitemsContainer'>
                     <h6> Aún no hay productos en tu bolsa de compra.  </h6>
-                    <h6> Hay algo especial esperando por ti </h6>
+                    <h6>¡Seguro hay algo especial esperando por ti!</h6>
                     <Link to='/' className='linkBtnContainer'>
                       <Button  variant='light' className='btnBackItems'>Volver a los productos</Button>
                     </Link> 
@@ -49,13 +47,13 @@ function BolsaCompras() {
                           }
                         </div>
                         <div className='buyControlsContainer'>
-                            <Button variant='outline-secondary' className='btnClearBag' onClick={clearbag}>Limpiar bolsa de compras <ClearBagWidget /></Button>
+                            <Button variant='outline-secondary' className='btnClearBag' onClick={clearbag}>Limpiar bolsa de compras<ClearBagWidget /></Button>
                             <hr></hr>
                             <div className='sumsContainer'>
                               <h6 className='subtotalSum'>Subtotal: $199.950</h6>
                               <h6 className='totalProductos'>Cantidad de productos: 20</h6>
                             </div>
-                            <Button variant='outline-secondary' className='btnToCheckout' onClick={checkout}>Proceder al pago <CheckoutWidget /></Button>
+                            <Button variant='light' className='btnToCheckout' onClick={checkout}>Proceder al pago <CheckoutWidget /></Button>
                         </div> 
                       </div>
         }
