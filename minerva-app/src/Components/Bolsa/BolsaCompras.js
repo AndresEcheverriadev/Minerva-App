@@ -9,7 +9,7 @@ import Button  from 'react-bootstrap/Button';
 
 function BolsaCompras() {
 
-  const {bagList,clearBag,NotItems,itemsFinder} = useContext(BagContext);
+  const {bagList,clearBag,NotItems,itemsFinder,calcSumTotalItems,calcTotalItems} = useContext(BagContext);
   
   console.log(bagList)
   itemsFinder();
@@ -50,8 +50,8 @@ function BolsaCompras() {
                             <Button variant='outline-secondary' className='btnClearBag' onClick={clearbag}>Limpiar bolsa de compras<ClearBagWidget /></Button>
                             <hr></hr>
                             <div className='sumsContainer'>
-                              <h6 className='subtotalSum'>Subtotal: $199.950</h6>
-                              <h6 className='totalProductos'>Cantidad de productos: 20</h6>
+                              <h6 className='subtotalSum'>Total: {calcTotalItems}</h6>
+                              <h6 className='totalProductos'>Cantidad de productos: {calcSumTotalItems}</h6>
                             </div>
                             <Button variant='light' className='btnToCheckout' onClick={checkout}>Proceder al pago <CheckoutWidget /></Button>
                         </div> 

@@ -1,3 +1,13 @@
+.CartWidgetContainer {
+display: flex;
+flex-direction: row;
+}
+
 .cartIcon {
     fill: #cccccc;
+}
+
+.CartWidgetBadge {
+width: 100px;
+height: auto;
 }

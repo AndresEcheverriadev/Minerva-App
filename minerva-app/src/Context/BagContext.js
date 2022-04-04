@@ -27,12 +27,7 @@ function BagContextProvider({children}) {
         setBagList([])
     }
     
-    const deleteItem = (Id) =>{
-        const indenterItem = bagList.filter(thisItem => thisItem.Id !== Id);
-        setBagList(indenterItem);
-        console.log('deleteItemfrombagcontext')
-    }
-
+  
     const itemsFinder = () => {
        
         if (bagList.length === 0) {
@@ -45,12 +40,25 @@ function BagContextProvider({children}) {
         } 
     }
 
-    const calcSubTotalItem = bagList.reduce((acc,product) =>{
-        return  acc = parseInt(product.Price)*product.cantidad;
+    const deleteItem = (Id) =>{
+        const indenterItem = bagList.filter((thisItem) => thisItem.Id !== Id);
+        setBagList(indenterItem);
+        console.log('delete Item')
+    }
+
+  
+   
+    const calcTotalItems = bagList.reduce((acc,product) =>{
+        return  acc + (product.cantidad * product.Price);
+    },0);
+    
+    const calcSumTotalItems = bagList.reduce((acc,product) => {
+        return acc + (product.cantidad);
     },0);
 
+
     return (
-        <BagContext.Provider value={{bagList,addToBag,deleteItem,clearBag,itemsFinder,NotItems,calcSubTotalItem}}>
+        <BagContext.Provider value={{bagList,deleteItem,addToBag,clearBag,itemsFinder,NotItems,calcTotalItems,calcSumTotalItems}}>
             { children }
         </BagContext.Provider>
     )
