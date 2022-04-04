@@ -1,13 +1,27 @@
 .CartWidgetContainer {
-display: flex;
-flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .cartIcon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     fill: #cccccc;
+    width: 100%;
+    height: auto;
 }
 
 .CartWidgetBadge {
-width: 100px;
-height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    position:absolute;
+    top: 12px;
 }

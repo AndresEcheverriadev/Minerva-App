@@ -50,7 +50,7 @@ function BolsaCompras() {
                             <Button variant='outline-secondary' className='btnClearBag' onClick={clearbag}>Limpiar bolsa de compras<ClearBagWidget /></Button>
                             <hr></hr>
                             <div className='sumsContainer'>
-                              <h6 className='subtotalSum'>Total: {calcTotalItems}</h6>
+                              <h6 className='subtotalSum'>Total: ${calcTotalItems}</h6>
                               <h6 className='totalProductos'>Cantidad de productos: {calcSumTotalItems}</h6>
                             </div>
                             <Button variant='light' className='btnToCheckout' onClick={checkout}>Proceder al pago <CheckoutWidget /></Button>
