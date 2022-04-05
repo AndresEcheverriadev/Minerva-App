@@ -9,10 +9,10 @@ function Item({product}) {
     <h6 className='itemTitle'>{product.Name}</h6>
     <div className='itemImgContainer'><img alt='' src={product.ImageURL} className='itemImage'></img> </div>
     <h6 className='itemPrice'>$ {product.Price}</h6>
-    <Link to={`/detalle/${product.Id}`} className='linkContainer' >
+    <Link to={`/detalle/${product.id}`} className='linkContainer' >
       <Button variant="outline-light" className='btntoDetails' >Detalles</Button>
     </Link>
-  <ItemCount stock={product.stock} initial={1} product={product} />
+  <ItemCount stock={product.Stock} initial={1} product={product} />
 </div> 
   )
 }
