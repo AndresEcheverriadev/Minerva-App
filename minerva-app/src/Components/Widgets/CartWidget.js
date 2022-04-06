@@ -1,7 +1,6 @@
-import React from 'react'
-import { useContext} from 'react'
-import {BagContext} from '../../Context/BagContext';
 import './CartWidget.css'
+import {useContext} from 'react'
+import {BagContext} from '../../Context/BagContext';
 import Badge from 'react-bootstrap/Badge'; 
 
 function CartWidget() {

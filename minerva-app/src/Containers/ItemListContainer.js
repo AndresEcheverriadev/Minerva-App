@@ -37,7 +37,7 @@ function ItemListContainer() {
       const queryCollection = collection(db,'Items') 
 
       if (categoriaid) {
-        const filterCategory = query(queryCollection, where('categoriaid','==','SubCategory'));
+        const filterCategory = query(queryCollection, where('SubCategory','==',categoriaid));
         const response = await getDocs(filterCategory); 
         setProducts(response.docs.map(prod=> ({id:prod.id,...prod.data()})));
           

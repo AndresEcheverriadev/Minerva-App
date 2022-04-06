@@ -1,8 +1,8 @@
-import BagItem from '../BagItem/BagItem';
+import './BolsaCompras.css'
 import { Link } from "react-router-dom";
 import { useContext} from 'react'
 import {BagContext} from '../../Context/BagContext';
-import './BolsaCompras.css'
+import BagItem from '../BagItem/BagItem';
 import ClearBagWidget from '../Widgets/ClearBagWidget'
 import CheckoutWidget from '../Widgets/CheckoutWidget'
 import Button  from 'react-bootstrap/Button';
@@ -38,7 +38,6 @@ function BolsaCompras() {
                       <video className='video1' type="video/mp4" muted autoPlay loop src='/Assets/Videonoitem1baja.mp4'></video>
                     </div>
                   </div>
-                    
                   : 
                       <div className='inBagContainer' >
                         <div className='bagListContainer'>
