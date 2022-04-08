@@ -1,7 +1,8 @@
 import './BolsaCompras.css'
-import { Link } from "react-router-dom";
-import { useContext} from 'react'
+import {Link} from "react-router-dom";
+import {useContext} from 'react'
 import {BagContext} from '../../Context/BagContext';
+import {getFirestore, collection, addDoc} from 'firebase/firestore'
 import BagItem from '../BagItem/BagItem';
 import ClearBagWidget from '../Widgets/ClearBagWidget'
 import CheckoutWidget from '../Widgets/CheckoutWidget'
@@ -15,14 +16,39 @@ function BolsaCompras() {
   itemsFinder();
   console.log(NotItems)
 
+  const newOrder = (e) => {
+    e.preventDefault();
+
+    let order = {}
+    order.buyer = {name:'Andres',email:'email@mail.com',phone:'5622235698'}
+    order.total = calcTotalItems;
+
+    order.items = bagList.map(orderItem => {
+
+      const id = orderItem.id
+      const nombre = orderItem.Name
+      const precio = orderItem.Price * orderItem.cantidad 
+
+      return {id,nombre,precio}
+    })
+    
+    console.log(order);
+
+    const database = getFirestore();
+    const queryCollection = collection(database,'Orders');
+    addDoc(queryCollection,order)
+    .then(resp => console.log(resp))
+
+  }
+
   const clearbag = () => {
     clearBag();
     console.log('borrar bolsa');
   }
 
-  const checkout = () => {
-    console.log('to checkout');
-  }
+  // const checkout = () => {
+  //   console.log('to checkout');
+  // }
 
   return (
     <div className='bagPageContainer'>
@@ -52,7 +78,7 @@ function BolsaCompras() {
                               <h6 className='subtotalSum'>Total: ${calcTotalItems}</h6>
                               <h6 className='totalProductos'>Cantidad de productos: {calcSumTotalItems}</h6>
                             </div>
-                            <Button variant='light' className='btnToCheckout' onClick={checkout}>Proceder al pago <CheckoutWidget /></Button>
+                            <Button variant='light' className='btnToCheckout' onClick={newOrder}>Proceder al pago <CheckoutWidget /></Button>
                         </div> 
                       </div>
         }

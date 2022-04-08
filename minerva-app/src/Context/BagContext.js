@@ -1,4 +1,3 @@
-import React from 'react'
 import {createContext, useState} from 'react';
 
 export const BagContext = createContext([])
@@ -10,7 +9,7 @@ function BagContextProvider({children}) {
     const addToBag=(item,count)=>{
 
         const findDuplicates = bagList.find(
-            (found) => found.Id === item.Id
+            (found) => found.id === item.id
           );
 
         if (findDuplicates) {
@@ -27,7 +26,6 @@ function BagContextProvider({children}) {
         setBagList([])
     }
     
-  
     const itemsFinder = () => {
        
         if (bagList.length === 0) {
@@ -46,8 +44,6 @@ function BagContextProvider({children}) {
         console.log('delete Item')
     }
 
-  
-   
     const calcTotalItems = bagList.reduce((acc,product) =>{
         return  acc + (product.cantidad * product.Price);
     },0);
@@ -55,7 +51,6 @@ function BagContextProvider({children}) {
     const calcSumTotalItems = bagList.reduce((acc,product) => {
         return acc + (product.cantidad);
     },0);
-
 
     return (
         <BagContext.Provider value={{bagList,deleteItem,addToBag,clearBag,itemsFinder,NotItems,calcTotalItems,calcSumTotalItems}}>
