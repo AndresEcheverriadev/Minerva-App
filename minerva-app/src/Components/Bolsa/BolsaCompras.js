@@ -2,11 +2,12 @@ import './BolsaCompras.css'
 import {Link} from "react-router-dom";
 import {useContext} from 'react'
 import {BagContext} from '../../Context/BagContext';
-import {getFirestore, collection, addDoc} from 'firebase/firestore'
+import {getFirestore, collection, addDoc, doc, updateDoc} from 'firebase/firestore'
 import BagItem from '../BagItem/BagItem';
 import ClearBagWidget from '../Widgets/ClearBagWidget'
 import CheckoutWidget from '../Widgets/CheckoutWidget'
 import Button  from 'react-bootstrap/Button';
+import Items from '../../Containers/promiser'
 
 function BolsaCompras() {
 
@@ -32,23 +33,45 @@ function BolsaCompras() {
       return {id,nombre,precio}
     })
     
-    console.log(order);
-
     const database = getFirestore();
     const queryCollection = collection(database,'Orders');
     addDoc(queryCollection,order)
-    .then(resp => console.log(resp))
+    .then(({id}) => console.log(id))
+  ;} 
 
+  const batchLoadFirestore = (e) => {
+    let load = {}
+
+    load = Items.map(orderItem => {
+      const id = orderItem.Id
+      const Name = orderItem.Name
+      const Price = orderItem.Price
+      const SubCategory = orderItem.categoria 
+      const Description = orderItem.Description
+      const Stock = orderItem.stock
+      const ImageURL = orderItem.ImageURL
+      return {id,Name,Price,SubCategory,Description,Stock,ImageURL}
+    })
+
+
+
+    const database = getFirestore();
+    const queryUpdate = doc(database,'Items','ider');
+    updateDoc(queryUpdate);
+
+    
   }
+
+
+
+
 
   const clearbag = () => {
     clearBag();
     console.log('borrar bolsa');
   }
 
-  // const checkout = () => {
-  //   console.log('to checkout');
-  // }
+
 
   return (
     <div className='bagPageContainer'>
@@ -68,7 +91,7 @@ function BolsaCompras() {
                       <div className='inBagContainer' >
                         <div className='bagListContainer'>
                           {
-                            bagList.map((product) => <BagItem key={product.Id} product={product}/>)
+                            bagList.map((product) => <BagItem key={product.id} product={product}/>)
                           }
                         </div>
                         <div className='buyControlsContainer'>

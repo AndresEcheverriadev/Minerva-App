@@ -11,19 +11,19 @@ const Items = [
 ];
 
 
+export default Items
 
+// export const getProducts = new Promise((resolve, reject) => {
 
-export const getProducts = new Promise((resolve, reject) => {
-
-        let boolean = true;
-        if(boolean) {
-          setTimeout(() => { 
-            resolve(Items);
-          }, 0);
-        }
+//         let boolean = true;
+//         if(boolean) {
+//           setTimeout(() => { 
+//             resolve(Items);
+//           }, 0);
+//         }
          
-        else {
-          reject('promise rejected');
-    }
-});
+//         else {
+//           reject('promise rejected');
+//     }
+// });
 
