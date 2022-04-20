@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { getFirestoreApp } from './Firebase/config';
+import {getFirestoreApp} from './Firebase/config';
+import './index.css';
 
 getFirestoreApp();
 

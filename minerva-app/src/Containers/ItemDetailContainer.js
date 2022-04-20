@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {useEffect,useState} from "react";
+import {useParams} from "react-router-dom";
 import ItemDetail from "../Components/ItemDetail/ItemDetail";
-import './ItemDetailContainer.css';
 import {getFirestore,getDoc,doc} from 'firebase/firestore'
+import './ItemDetailContainer.css';
 
 function ItemDetailContainer() {
   const [product, setProduct]   = useState([]);
@@ -14,20 +14,6 @@ function ItemDetailContainer() {
     getDoc(queryDoc)
     .then(resp => setProduct({id: resp.id, ...resp.data()}))
   },[]);
-
-
-
-
-
-
-  // useEffect(() => {
-  //   getProducts
-  //   .then(response => response.find(prod => prod.Id === detalleId ))
-  //   .then(response => setProduct(response))
-  //   .catch((error) => console.log(error))
-  //   .finally();
-
-  // },[]);
 
   return (
     <div className='itemDetailContainerOut'>

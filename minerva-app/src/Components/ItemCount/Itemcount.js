@@ -29,7 +29,6 @@ const onAdd = () =>{
   addToBag(bag,count);
 }
 
-//trasladar a archivo propio - no conviene crear y llamar 
 const InputAddtoBag= ()=> {
   return (
     <Button variant="outline-light" className='itemCountBtnAddOn'onClick={onAdd}><CartItemtWidget/> Agregar a la compra</Button> 
