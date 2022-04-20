@@ -15,11 +15,9 @@ function BagContextProvider({children}) {
         if (findDuplicates) {
             findDuplicates.cantidad += count; 
             setBagList( [ ...bagList]);
-            console.log('duplicado')
         } else {
             setBagList( [ ...bagList, item ] )
-            console.log('no duplicado')
-        }       
+        }  
     }
     
     const clearBag = () =>{
@@ -30,27 +28,26 @@ function BagContextProvider({children}) {
        
         if (bagList.length === 0) {
             SetNoItems(true);
-            console.log('no hay items');
         }
         else {
             SetNoItems(false);
-            console.log('hay items');
         } 
     }
 
-    const deleteItem = (Id) =>{
-        const indenterItem = bagList.filter((thisItem) => thisItem.Id !== Id);
+    const deleteItem = (id) =>{
+        const indenterItem = bagList.filter((thisItem) => thisItem.id !== id);
         setBagList(indenterItem);
-        console.log('delete Item')
     }
 
     const calcTotalItems = bagList.reduce((acc,product) =>{
-        return  acc + (product.cantidad * product.Price);
+        return  parseInt(acc + (product.cantidad * product.Price));
     },0);
+
     
     const calcSumTotalItems = bagList.reduce((acc,product) => {
-        return acc + (product.cantidad);
+        return parseInt(acc + (product.cantidad));
     },0);
+
 
     return (
         <BagContext.Provider value={{bagList,deleteItem,addToBag,clearBag,itemsFinder,NotItems,calcTotalItems,calcSumTotalItems}}>

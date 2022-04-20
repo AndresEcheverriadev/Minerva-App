@@ -28,7 +28,7 @@ function BagItem({product}) {
                 <h6 className='bagItemSubtotal'>Subtotal: $ {calcSubTotalItem}</h6>
               </div>
             </div>
-            <Button variant='outline-secondary' onClick={() => deleteItem(product.Id)} className='btnDeleteItem'>Quitar producto <DeleteItemWidget /></Button>
+            <Button variant='outline-secondary' onClick={() => deleteItem(product.id)} className='btnDeleteItem'>Quitar producto <DeleteItemWidget /></Button>
         </div>
         <hr></hr>
     </div>

@@ -11,11 +11,8 @@ import Items from '../../Containers/promiser'
 
 function BolsaCompras() {
 
-  const {bagList,clearBag,NotItems,itemsFinder,calcSumTotalItems,calcTotalItems} = useContext(BagContext);
+  const {bagList,clearBag,NotItems,calcSumTotalItems,calcTotalItems} = useContext(BagContext);
   
-  console.log(bagList)
-  itemsFinder();
-  console.log(NotItems)
 
   const newOrder = (e) => {
     e.preventDefault();
@@ -66,9 +63,8 @@ function BolsaCompras() {
 
 
 
-  const clearbag = () => {
+  const btnClearBag = () => {
     clearBag();
-    console.log('borrar bolsa');
   }
 
 
@@ -95,7 +91,7 @@ function BolsaCompras() {
                           }
                         </div>
                         <div className='buyControlsContainer'>
-                            <Button variant='outline-secondary' className='btnClearBag' onClick={clearbag}>Limpiar bolsa de compras<ClearBagWidget /></Button>
+                            <Button variant='outline-secondary' className='btnClearBag' onClick={btnClearBag}>Limpiar bolsa de compras<ClearBagWidget /></Button>
                             <hr></hr>
                             <div className='sumsContainer'>
                               <h6 className='subtotalSum'>Total: ${calcTotalItems}</h6>

@@ -49,8 +49,7 @@ const [inputType, setInputType ] = useState('buttonsetadd')
 
 const onAdd= () => {
   let bag ={...product, cantidad: count}
-  addToBag(bag);
-  console.log('to bag from ICD')
+  addToBag(bag,count);
 }
 
 const handleInter=()=>{

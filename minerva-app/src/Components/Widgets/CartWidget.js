@@ -1,12 +1,15 @@
 import './CartWidget.css'
-import {useContext} from 'react'
+import {useContext, useEffect} from 'react'
 import {BagContext} from '../../Context/BagContext';
 import Badge from 'react-bootstrap/Badge'; 
 
 function CartWidget() {
 
-  const {calcSumTotalItems,NotItems,itemsFinder} = useContext(BagContext);
-  itemsFinder();
+  const {calcSumTotalItems,NotItems,itemsFinder,bagList} = useContext(BagContext);
+
+  useEffect(() => {
+    itemsFinder();
+  },[bagList]);
 
   return (
     <div className='CartWidgetContainer'>

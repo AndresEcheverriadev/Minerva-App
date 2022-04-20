@@ -27,7 +27,6 @@ const handlerCountMinus = () => {
 const onAdd = () =>{
   let bag ={...product, cantidad: count}
   addToBag(bag,count);
-  console.log('to bag from IC')
 }
 
 //trasladar a archivo propio - no conviene crear y llamar 
