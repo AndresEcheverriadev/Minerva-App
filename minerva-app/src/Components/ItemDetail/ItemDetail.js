@@ -1,5 +1,5 @@
-import './ItemDetail.css'
 import ItemCountDetail from "../ItemCountDetail/ItemCountDetail";
+import './ItemDetail.css'
 
 function ItemDetail({product}) {
 

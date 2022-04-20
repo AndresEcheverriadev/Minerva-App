@@ -9,7 +9,7 @@ function CartWidget() {
 
   useEffect(() => {
     itemsFinder();
-  },[bagList]);
+  },[bagList,itemsFinder]);
 
   return (
     <div className='CartWidgetContainer'>

@@ -40,12 +40,12 @@ function BagContextProvider({children}) {
     }
 
     const calcTotalItems = bagList.reduce((acc,product) =>{
-        return  parseInt(acc + (product.cantidad * product.Price));
+        return  acc + (product.cantidad * product.Price);
     },0);
 
     
     const calcSumTotalItems = bagList.reduce((acc,product) => {
-        return parseInt(acc + (product.cantidad));
+        return acc + (product.cantidad);
     },0);
 
 

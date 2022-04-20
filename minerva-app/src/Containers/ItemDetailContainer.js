@@ -13,7 +13,7 @@ function ItemDetailContainer() {
     const queryDoc = doc(db,'Items',detalleId) 
     getDoc(queryDoc)
     .then(resp => setProduct({id: resp.id, ...resp.data()}))
-  },[]);
+  },[detalleId]);
 
   return (
     <div className='itemDetailContainerOut'>

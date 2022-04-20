@@ -1,19 +1,14 @@
 import React from 'react'
-import './BagItem.css'
 import { useContext } from 'react'
 import {BagContext} from '../../Context/BagContext';
 import Button  from 'react-bootstrap/Button';
 import DeleteItemWidget from '../Widgets/DeleteItemWidget'
-
-
+import './BagItem.css'
 
 function BagItem({product}) {
     const {deleteItem} = useContext(BagContext);
-    const calcSubTotalItem = (product.cantidad * product.Price); 
-    
-    
-
-
+    const calcSubTotalItem = (product.cantidad * product.Price).toLocaleString(); 
+   
   return (  
     <div className='bagItemContainer'>
         <div className='bagItemData'>

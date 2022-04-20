@@ -1,19 +1,18 @@
-import './BolsaCompras.css'
 import {Link} from "react-router-dom";
 import {useContext} from 'react'
 import {BagContext} from '../../Context/BagContext';
-import {getFirestore, collection, addDoc, doc, updateDoc} from 'firebase/firestore'
+import {getFirestore,collection,addDoc,doc,updateDoc,getDoc} from 'firebase/firestore'
 import BagItem from '../BagItem/BagItem';
 import ClearBagWidget from '../Widgets/ClearBagWidget'
 import CheckoutWidget from '../Widgets/CheckoutWidget'
 import Button  from 'react-bootstrap/Button';
-import Items from '../../Containers/promiser'
+import './BolsaCompras.css'
+
 
 function BolsaCompras() {
 
   const {bagList,clearBag,NotItems,calcSumTotalItems,calcTotalItems} = useContext(BagContext);
   
-
   const newOrder = (e) => {
     e.preventDefault();
 
@@ -24,50 +23,55 @@ function BolsaCompras() {
     order.items = bagList.map(orderItem => {
 
       const id = orderItem.id
-      const nombre = orderItem.Name
-      const precio = orderItem.Price * orderItem.cantidad 
+      const nameItem = orderItem.Name
+      const totalItem = orderItem.Price * orderItem.cantidad 
 
-      return {id,nombre,precio}
+      return {id,nameItem,totalItem}
     })
+
+    console.log(order);
+
+    const alertCheckout = `Se ha generado tu orden de compra. 
+    Nombre: ${JSON.stringify(order.buyer.name)}
+    E-mail: ${JSON.stringify(order.buyer.email)}
+    Teléfono: ${JSON.stringify(order.buyer.phone)}
+    ------------------------------------------------
+    Total: $ ${(order.total).toLocaleString()}`;
     
     const database = getFirestore();
     const queryCollection = collection(database,'Orders');
     addDoc(queryCollection,order)
-    .then(({id}) => console.log(id))
+    .then(resp => alert(alertCheckout))
   ;} 
 
-  const batchLoadFirestore = (e) => {
-    let load = {}
+  // const batchLoadFirestore = (e) => {
+  //   let load = {}
 
-    load = Items.map(orderItem => {
-      const id = orderItem.Id
-      const Name = orderItem.Name
-      const Price = orderItem.Price
-      const SubCategory = orderItem.categoria 
-      const Description = orderItem.Description
-      const Stock = orderItem.stock
-      const ImageURL = orderItem.ImageURL
-      return {id,Name,Price,SubCategory,Description,Stock,ImageURL}
-    })
+  //   load = Items.map(orderItem => {
+  //     const id = orderItem.Id
+  //     const Name = orderItem.Name
+  //     const Price = orderItem.Price
+  //     const SubCategory = orderItem.categoria 
+  //     const Description = orderItem.Description
+  //     const Stock = orderItem.stock
+  //     const ImageURL = orderItem.ImageURL
+  //     return {id,Name,Price,SubCategory,Description,Stock,ImageURL}
+  //   })
 
 
 
-    const database = getFirestore();
-    const queryUpdate = doc(database,'Items','ider');
-    updateDoc(queryUpdate);
+  //   const database = getFirestore();
+  //   const queryUpdate = doc(database,'Items','ider');
+  //   updateDoc(queryUpdate);
 
     
-  }
-
-
-
-
+  // }
 
   const btnClearBag = () => {
     clearBag();
   }
 
-
+  const localeSumTotalItems = (calcTotalItems).toLocaleString();
 
   return (
     <div className='bagPageContainer'>
@@ -94,7 +98,7 @@ function BolsaCompras() {
                             <Button variant='outline-secondary' className='btnClearBag' onClick={btnClearBag}>Limpiar bolsa de compras<ClearBagWidget /></Button>
                             <hr></hr>
                             <div className='sumsContainer'>
-                              <h6 className='subtotalSum'>Total: ${calcTotalItems}</h6>
+                              <h6 className='subtotalSum'>Total: ${localeSumTotalItems}</h6>
                               <h6 className='totalProductos'>Cantidad de productos: {calcSumTotalItems}</h6>
                             </div>
                             <Button variant='light' className='btnToCheckout' onClick={newOrder}>Proceder al pago <CheckoutWidget /></Button>
