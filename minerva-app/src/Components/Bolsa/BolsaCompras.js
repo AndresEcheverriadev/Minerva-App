@@ -8,7 +8,6 @@ import CheckoutWidget from '../Widgets/CheckoutWidget'
 import Button  from 'react-bootstrap/Button';
 import './BolsaCompras.css'
 
-
 function BolsaCompras() {
 
   const {bagList,clearBag,NotItems,calcSumTotalItems,calcTotalItems} = useContext(BagContext);
@@ -29,8 +28,6 @@ function BolsaCompras() {
       return {id,nameItem,totalItem}
     })
 
-    console.log(order);
-
     const alertCheckout = `Se ha generado tu orden de compra. 
     Nombre: ${JSON.stringify(order.buyer.name)}
     E-mail: ${JSON.stringify(order.buyer.email)}
@@ -43,29 +40,6 @@ function BolsaCompras() {
     addDoc(queryCollection,order)
     .then(resp => alert(alertCheckout))
   ;} 
-
-  // const batchLoadFirestore = (e) => {
-  //   let load = {}
-
-  //   load = Items.map(orderItem => {
-  //     const id = orderItem.Id
-  //     const Name = orderItem.Name
-  //     const Price = orderItem.Price
-  //     const SubCategory = orderItem.categoria 
-  //     const Description = orderItem.Description
-  //     const Stock = orderItem.stock
-  //     const ImageURL = orderItem.ImageURL
-  //     return {id,Name,Price,SubCategory,Description,Stock,ImageURL}
-  //   })
-
-
-
-  //   const database = getFirestore();
-  //   const queryUpdate = doc(database,'Items','ider');
-  //   updateDoc(queryUpdate);
-
-    
-  // }
 
   const btnClearBag = () => {
     clearBag();

@@ -21,6 +21,7 @@ dist-ssr
 .env.test.local
 .env.production.local
 promiser.js
+batchload.js
 
 # logs
 logs
