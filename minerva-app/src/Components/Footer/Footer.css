@@ -1,0 +1,53 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: black !important;
+    padding-top: 200px;
+    justify-content: center;
+}
+
+.footerLogoContainer {
+    padding-bottom: 15px;
+}
+
+.formContainer {
+    width: 100%;
+    height:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.formTextContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items:flex-end;
+    width: 25%;
+    color: white;
+}
+
+.formInput {
+    width: 50%;
+}
+
+.formBtnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 25%;
+}
+
+.formBtn:hover {
+    background-color: white;
+    color: black;
+}
+
+.copyrightContainer {
+    width: 100%;
+    height:auto;
+    font-size: 14px;
+}
