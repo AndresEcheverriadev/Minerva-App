@@ -1,4 +1,3 @@
-import './Navbar.css'
 import { NavLink } from 'react-router-dom'
 import Navbar  from "react-bootstrap/Navbar"
 import Container  from "react-bootstrap/Container"
@@ -6,7 +5,8 @@ import Nav  from "react-bootstrap/Nav"
 import NavDropdown  from "react-bootstrap/NavDropdown"
 import CartWidget from "../Widgets/CartWidget"
 import BrandLogo from "../BrandLogo/BrandLogo"
-
+import Social from "../Social/Social"
+import './Navbar.css'
 
 function NavBar() {
   return (
@@ -32,6 +32,9 @@ function NavBar() {
           <NavDropdown.Item href=""><NavLink to="categoria/Pañuelos">Pañuelos</NavLink></NavDropdown.Item>
           <NavDropdown.Item href=""><NavLink to="categoria/Cinturones">Cinturones</NavLink></NavDropdown.Item>
         </NavDropdown>
+        <NavLink to='/' >
+          <Social/>
+        </NavLink>
       </Nav>
       <Nav>
         <NavLink to='bolsa' >

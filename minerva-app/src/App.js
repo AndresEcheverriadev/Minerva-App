@@ -20,10 +20,10 @@ function App() {
           <div className="App">  
             <NavBar />
               <Routes>
-                <Route path='/' element={<ItemListContainer greeting={'Item List Container'} />} />
-                <Route path='/categoria/:categoriaid' element={<ItemListContainer greeting={'Item List Container'} />} />
-                <Route path='/detalle/:detalleId' element={<ItemDetailContainer greeting={'Item Detail Container'} />} /> 
-                <Route path='/bolsa' element={<BolsaCompras greeting={'Pronto..Bolsa de compra'} />} /> 
+                <Route path='/' element={<ItemListContainer/>} />
+                <Route path='/categoria/:categoriaid' element={<ItemListContainer/>} />
+                <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>} /> 
+                <Route path='/bolsa' element={<BolsaCompras/>} /> 
                 <Route path='/nosotros' element={<NosotrosPage greeting={'Pronto..Nosotros'} />} /> 
                 <Route path='/*' element={<Navigate to='/'/>} /> 
               </Routes>
