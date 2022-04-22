@@ -1,0 +1,38 @@
+.homeBannerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.homeBannerImgContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeBannerImg {
+    width: 80%;
+    height: auto;
+}
+
+.homeBannerTxt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 55%;
+    text-align: center;
+    width: 500px;
+}
+
+.iconText {
+    fill: white;
+}

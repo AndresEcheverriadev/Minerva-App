@@ -1,4 +1,6 @@
 .nosotrosContainer {
+    display: flex;
+    flex-direction: column;
     color: #cccccc;
     padding-bottom: 50px;
 }
