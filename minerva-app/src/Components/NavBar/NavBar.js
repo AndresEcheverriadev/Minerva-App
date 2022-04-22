@@ -19,7 +19,7 @@ function NavBar() {
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="me-auto">
-        <NavLink to='nosotros' className='NavBarLinkNosotros' style={{color:'rgba(255,255,255,.55)'}}>Nosotros</NavLink>
+        <NavLink to='porqueMinerva' className='NavBarLinkNosotros' style={{color:'rgba(255,255,255,.55)'}}>¿Por qué Minerva?</NavLink>
         <NavDropdown title="Joyas" id="collasible-nav-dropdown">
           <NavDropdown.Item href=""><NavLink to="categoria/Aros">Aros</NavLink></NavDropdown.Item>
           <NavDropdown.Item href=""><NavLink to="categoria/Anillos">Anillos</NavLink></NavDropdown.Item>

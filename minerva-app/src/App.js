@@ -25,7 +25,7 @@ function App() {
                 <Route path='/categoria/:categoriaid' element={<ItemListContainer/>} />
                 <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>} /> 
                 <Route path='/bolsa' element={<BolsaCompras/>} /> 
-                <Route path='/nosotros' element={<NosotrosPage/>} /> 
+                <Route path='/porqueMinerva' element={<NosotrosPage/>} /> 
                 <Route path='/*' element={<Navigate to='/'/>} /> 
               </Routes>
             <Footer />

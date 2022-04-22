@@ -33,6 +33,10 @@
     width: 500px;
 }
 
+.titHome{
+    font-size: 30px;
+}
+
 .iconText {
     fill: white;
 }
