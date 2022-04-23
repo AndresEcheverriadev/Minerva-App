@@ -18,7 +18,7 @@ function NosotrosPage() {
       </div>
       <div className='conceptsContainer'>
         <div className='concept1'><h4 className='titConcept1'>Identidad</h4><img className='conceptImg' src='./Assets/conceptsImgs1.jpg'></img></div>
-        <div className='concept2'><h4 className='titConcept2'>Alegría</h4><img className='conceptImg' src='./Assets/conceptsImgs2.jpg'></img></div>
+        <div className='concept2'><h4 className='titConcept2'>Energía</h4><img className='conceptImg' src='./Assets/conceptsImgs2.jpg'></img></div>
         <div className='concept3'><h4 className='titConcept3'>Poder</h4><img className='conceptImg' src='./Assets/conceptsImgs3.jpg'></img></div>
       </div>
     </div>

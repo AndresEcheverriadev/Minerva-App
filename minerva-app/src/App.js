@@ -8,8 +8,9 @@ import ItemDetailContainer from './Containers/ItemDetailContainer';
 import BolsaCompras from './Components/Bolsa/BolsaCompras';
 import NosotrosPage from './Components/Nosotros/NosotrosPage';
 import Footer from './Components/Footer/Footer';
-import './App.css';
 import HomePage from './Components/Home/HomePage';
+import CheckoutCompras from './Components/Bolsa/CheckoutCompras';
+import './App.css';
 
 const ItemListContainer = lazy(() => import('./Containers/ItemListContainer'))
 
@@ -25,6 +26,7 @@ function App() {
                 <Route path='/categoria/:categoriaid' element={<ItemListContainer/>} />
                 <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>} /> 
                 <Route path='/bolsa' element={<BolsaCompras/>} /> 
+                <Route path='/checkout' element={<CheckoutCompras/>} />
                 <Route path='/porqueMinerva' element={<NosotrosPage/>} /> 
                 <Route path='/*' element={<Navigate to='/'/>} /> 
               </Routes>
