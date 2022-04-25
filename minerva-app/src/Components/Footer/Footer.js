@@ -20,6 +20,7 @@ function Footer() {
 </Form>
 
 <div className="text-center p-3 copyrightContainer" style={{color:'rgba(255,255,255,.55)'}}>© 2022 Copyright Minerva</div>
+<div className='revChecker'>rev 1.1</div>
 
 </footer>  )
 }
