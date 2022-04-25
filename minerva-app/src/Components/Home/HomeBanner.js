@@ -1,5 +1,6 @@
-import React from 'react'
-import './HomeBanner.css'
+import React from 'react';
+import './HomeBanner.css';
+import bannerHome from '../../Assets/bannerHome.jpg' 
 
 function HomeBanner() {
 
@@ -9,7 +10,7 @@ function HomeBanner() {
   return (
     <div className='homeBannerContainer'>
         <div className='homeBannerImgContainer'>
-            <img className='homeBannerImg' src='/Assets/bannerHome.jpg'></img>
+            <img className='homeBannerImg' src={bannerHome}></img>
             <div className='homeBannerTxt'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-compact-up iconText" viewBox="0 0 16 16">
                     <path fillRule="evenodd" d="M7.776 5.553a.5.5 0 0 1 .448 0l6 3a.5.5 0 1 1-.448.894L8 6.56 2.224 9.447a.5.5 0 1 1-.448-.894l6-3z"/>

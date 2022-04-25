@@ -1,5 +1,9 @@
 import React from 'react'
 import './NosotrosPage.css'
+import titConcept1 from '../../Assets/conceptsImgs1.jpg'
+import titConcept2 from '../../Assets/conceptsImgs2.jpg'
+import titConcept3 from '../../Assets/conceptsImgs3.jpg'
+import statue3d from '../../Assets/Minerva3d.png'
 
 function NosotrosPage() {
 
@@ -14,12 +18,12 @@ function NosotrosPage() {
         <h5>{titleNosostros}</h5>
       </div>
       <div className='statueContainer'>
-        <img className='statue3d' src='./Assets/Minerva3d.png'></img>
+        <img className='statue3d' src={statue3d}></img>
       </div>
       <div className='conceptsContainer'>
-        <div className='concept1'><h4 className='titConcept1'>Identidad</h4><img className='conceptImg' src='./Assets/conceptsImgs1.jpg'></img></div>
-        <div className='concept2'><h4 className='titConcept2'>Energía</h4><img className='conceptImg' src='./Assets/conceptsImgs2.jpg'></img></div>
-        <div className='concept3'><h4 className='titConcept3'>Poder</h4><img className='conceptImg' src='./Assets/conceptsImgs3.jpg'></img></div>
+        <div className='concept1'><h4 className='titConcept1'>Identidad</h4><img className='conceptImg' src={titConcept1}></img></div>
+        <div className='concept2'><h4 className='titConcept2'>Energía</h4><img className='conceptImg' src={titConcept2}></img></div>
+        <div className='concept3'><h4 className='titConcept3'>Poder</h4><img className='conceptImg' src={titConcept3}></img></div>
       </div>
     </div>
   )

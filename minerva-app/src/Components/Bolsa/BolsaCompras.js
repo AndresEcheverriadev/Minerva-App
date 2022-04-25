@@ -5,6 +5,7 @@ import BagItem from '../BagItem/BagItem';
 import ClearBagWidget from '../Widgets/ClearBagWidget'
 import CheckoutContinue from '../Widgets/CheckoutContinue'
 import Button  from 'react-bootstrap/Button';
+import videoNoItem from '../../Assets/Videonoitem1baja.mp4'
 import './BolsaCompras.css'
 
 function BolsaCompras() {
@@ -28,7 +29,7 @@ function BolsaCompras() {
                       <Button  variant='light' className='btnBackItems'>Volver a los productos</Button>
                     </Link> 
                     <div className='videoNoItemContainer'> 
-                      <video className='video1' type="video/mp4" muted autoPlay loop src='/Assets/Videonoitem1baja.mp4'></video>
+                      <video className='video1' type="video/mp4" muted autoPlay loop src={videoNoItem}></video>
                     </div>
                   </div>
                   : 
