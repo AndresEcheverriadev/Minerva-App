@@ -1,9 +1,9 @@
 import React from 'react'
 import './NosotrosPage.css'
-import titConcept1 from '../../Assets/conceptsImgs1.jpg'
-import titConcept2 from '../../Assets/conceptsImgs2.jpg'
-import titConcept3 from '../../Assets/conceptsImgs3.jpg'
-import statue3d from '../../Assets/Minerva3d.png'
+import titConcept1 from './conceptsImgs1.jpg'
+import titConcept2 from './conceptsImgs2.jpg'
+import titConcept3 from './conceptsImgs3.jpg'
+import statue3d from './Minerva3d.png'
 
 function NosotrosPage() {
 

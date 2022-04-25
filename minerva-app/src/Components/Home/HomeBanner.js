@@ -1,6 +1,6 @@
 import React from 'react';
 import './HomeBanner.css';
-import bannerHome from '../../Assets/bannerHome.jpg' 
+import bannerHome from './bannerHome.jpg' 
 
 function HomeBanner() {
 

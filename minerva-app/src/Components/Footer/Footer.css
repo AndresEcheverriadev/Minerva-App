@@ -16,8 +16,9 @@
     width: 100%;
     height:auto;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
     gap: 10px;
 }
 

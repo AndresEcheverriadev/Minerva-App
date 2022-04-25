@@ -5,7 +5,7 @@ import BagItem from '../BagItem/BagItem';
 import ClearBagWidget from '../Widgets/ClearBagWidget'
 import CheckoutContinue from '../Widgets/CheckoutContinue'
 import Button  from 'react-bootstrap/Button';
-import videoNoItem from '../../Assets/Videonoitem1baja.mp4'
+import videoNoItem from './Videonoitem1baja.mp4'
 import './BolsaCompras.css'
 
 function BolsaCompras() {
